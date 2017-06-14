@@ -1,6 +1,9 @@
 /vendor/
 composer.lock
 
+
+.idea
+
 ### OSX ###
 *.DS_Store
 .AppleDouble

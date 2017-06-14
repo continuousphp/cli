@@ -14,9 +14,15 @@
         "symfony/console": "^3.3",
         "hoa/console": "~3.0"
     },
-    "autoload-dev": {
+    "autoload": {
         "psr-4": {
             "Continuous\\Cli\\": "src/"
+        },
+        "files": ["constants.php"]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Continuous\\Cli\\Tests\\": "tests/"
         }
     },
     "bin": ["bin/continuousphp"],
