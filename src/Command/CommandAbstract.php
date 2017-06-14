@@ -3,6 +3,7 @@
 namespace Continuous\Cli\Command;
 
 use Symfony\Component\Console\Command\Command;
+use Symfony\Component\Console\Helper\ProgressBar;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -17,6 +18,11 @@ abstract class CommandAbstract extends Command
      * @var \Continuous\Sdk\Client
      */
     protected $continuousClient;
+
+    /**
+     * @var ProgressBar
+     */
+    protected $loader;
 
     /**
      * CommandAbstract constructor.
@@ -57,5 +63,29 @@ abstract class CommandAbstract extends Command
         $this->continuousClient = \Continuous\Sdk\Service::factory([
             'token' => $token
         ]);
+    }
+
+    protected function showLoader($output, $message = '')
+    {
+        $this->loader = new ProgressBar($output, 1);
+
+        if ($message) {
+            $this->loader->setFormatDefinition('custom', ' %current%/%max% -- %message%');
+            $this->loader->setFormat('custom');
+            $this->loader->setMessage($message);
+
+            $this->loader->start();
+            $this->loader->advance();
+        } else {
+            $this->loader->start();
+        }
+    }
+
+    protected function hideLoader($output)
+    {
+        $this->loader->finish();
+        $this->loader = null;
+
+        $output->writeln("\n");
     }
 }

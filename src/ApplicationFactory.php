@@ -3,6 +3,7 @@
 namespace Continuous\Cli;
 
 use Continuous\Cli\Command\Company\CompanyListCommand;
+use Continuous\Cli\Command\Repository\RepositoryListCommand;
 use Symfony\Component\Console\Application;
 
 /**
@@ -22,6 +23,7 @@ final class ApplicationFactory
     {
         $application = new Application(self::NAME, self::getVersion());
         $application->add(new CompanyListCommand());
+        $application->add(new RepositoryListCommand());
 
         return $application;
     }
