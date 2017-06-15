@@ -3,6 +3,7 @@
 namespace Continuous\Cli\Command\Repository;
 
 use Continuous\Cli\Command\CommandAbstract;
+use Continuous\Sdk\Collection;
 use Symfony\Component\Console\Helper\Table;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
@@ -14,8 +15,8 @@ class RepositoryListCommand extends CommandAbstract
     {
         $this
             ->setName('repo:list')
-            ->setDescription('List of repositories authorized on provider application.')
-            ->setHelp('This command help you to find the repository that continuousPHP have access and can be configured.')
+            ->setDescription('List of repositories not yet configured.')
+            ->setHelp('This command help you to find the repository that you can configure on ContinuousPHP and has not yet be initialized.')
         ;
 
         $this
@@ -38,6 +39,7 @@ class RepositoryListCommand extends CommandAbstract
         $filterName = $input->getOption('filter-name');
         $this->showLoader($output, 'Loading repositories from providers (github, bitbucket, gitlab)...');
 
+        /** @var Collection $collection */
         $collection = $this->continuousClient->getRepositories();
         $rows = [];
 
@@ -51,14 +53,19 @@ class RepositoryListCommand extends CommandAbstract
             }
 
             $rows[] = [
+                $repository->getProvider()->get('name'),
+                $repository->get('isPrivate') ? 'Yes' : "No",
                 $id,
-                $name
+                $name,
+                $repository->get('owner'),
+                $repository->get('htmlUrl'),
+                $repository->get('description'),
             ];
         }
 
         $table = new Table($output);
         $table
-            ->setHeaders(['ID', 'Name'])
+            ->setHeaders(['Provider', 'Private', 'ID', 'Name', 'Owner', 'Url', 'Description'])
             ->setRows($rows)
             ->render()
         ;
