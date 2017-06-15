@@ -3,6 +3,8 @@
 namespace Continuous\Cli;
 
 use Continuous\Cli\Command\Build\BuildListCommand;
+use Continuous\Cli\Command\Build\BuildStartCommand;
+use Continuous\Cli\Command\Build\BuildStopCommand;
 use Continuous\Cli\Command\Company\CompanyListCommand;
 use Continuous\Cli\Command\Project\ProjectListCommand;
 use Continuous\Cli\Command\Repository\RepositoryListCommand;
@@ -28,6 +30,8 @@ final class ApplicationFactory
         $application->add(new RepositoryListCommand());
         $application->add(new ProjectListCommand());
         $application->add(new BuildListCommand());
+        $application->add(new BuildStartCommand());
+        $application->add(new BuildStopCommand());
 
         return $application;
     }

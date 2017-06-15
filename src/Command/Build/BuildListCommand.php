@@ -4,6 +4,7 @@ namespace Continuous\Cli\Command\Build;
 
 use Continuous\Cli\Command\CommandAbstract;
 use Continuous\Sdk\Collection;
+use Continuous\Sdk\Entity\Build;
 use Symfony\Component\Console\Helper\Table;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
@@ -34,7 +35,7 @@ class BuildListCommand extends CommandAbstract
                 's',
                 InputOption::VALUE_OPTIONAL | InputOption::VALUE_IS_ARRAY,
                 'the build status',
-                ['in-progress', 'complete', 'timeout']
+                Build::STATE
             )
             ->addOption(
                 'noPr',
