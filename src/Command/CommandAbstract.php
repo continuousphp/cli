@@ -36,6 +36,21 @@ abstract class CommandAbstract extends Command
         $this->addTokenOption();
     }
 
+    public static function mapProviderToSdk($provider)
+    {
+        if (in_array(strtolower(trim($provider)), ['github', 'git hub']))
+        {
+            return 'git-hub';
+        }
+
+        if (in_array(strtolower(trim($provider)), ['bb']))
+        {
+            return 'bitbucket';
+        }
+
+        return $provider;
+    }
+
     protected function addTokenOption()
     {
         $this
