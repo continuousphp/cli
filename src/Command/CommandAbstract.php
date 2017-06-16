@@ -56,9 +56,16 @@ abstract class CommandAbstract extends Command
         $this
             ->addOption(
                 'token',
-                't',
+                null,
                 InputOption::VALUE_OPTIONAL,
                 'The token of continuousphp user',
+                null
+            )
+            ->addOption(
+                'profile',
+                null,
+                InputOption::VALUE_OPTIONAL,
+                'The profile of configure credentials. See route configure',
                 null
             );
     }
@@ -70,9 +77,16 @@ abstract class CommandAbstract extends Command
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $token = $input->getOption('token');
+        $profile = $input->getOption('profile');
 
         if (null === $token && false === ($token = getenv('CPHP_TOKEN'))) {
-            $output->writeln("<comment>WARNING : ContinuousPHP Token was not found</comment>");
+
+            $profile = empty($profile) ? 'default' : $profile;
+            $token = ConfigureCommand::getToken($profile);
+
+            if (null === $token) {
+                $output->writeln("<comment>WARNING : ContinuousPHP Token was not found</comment>");
+            }
         }
 
         $this->continuousClient = \Continuous\Sdk\Service::factory([
