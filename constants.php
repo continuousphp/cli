@@ -1,5 +1,8 @@
 <?php
 
+/**
+ * @version @git-version@
+ */
 namespace Continuous\Cli;
 
-define(__NAMESPACE__ . '\\' . 'version', 'dev-master');
+define(__NAMESPACE__ . '\\' . 'version', '@git-version@');

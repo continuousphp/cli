@@ -1,4 +1,6 @@
-<img src="https://app.continuousphp.com/assets/logos/continuousphp.svg" alt="ContinuousPHP" width="250px" align="right"/>
+<a href="http://continuous.lu">
+  <img src="https://app.continuousphp.com/assets/logos/continuousphp.svg" alt="ContinuousPHP" width="250px" align="right"/>
+</a>
 
 <p align="left">
   <a href="https://continuousphp.com/git-hub/continuousphp/cli"><img alt="Build Status" src="https://status.continuousphp.com/git-hub/continuousphp/cli?token=9800bb61-98f2-447d-a331-025f0b9af298" /></a>
@@ -22,6 +24,8 @@ $ composer require continuousphp/cli '~0.0'
 ```
 
 ## Usage
+
+sed -i 's/;phar.readonly = On/phar.readonly = Off/' /home/cphp/.phpbrew/php/*/etc/php.ini
 
 ## Contributing
 
