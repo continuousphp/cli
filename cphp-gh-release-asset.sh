@@ -6,7 +6,7 @@ sign()
     gpg --verify $1.sig $1
 }
 
-TAG=$(shell echo ${CPHP_GIT_REF} | tail -c +11)
+TAG=`echo ${CPHP_GIT_REF} | tail -c +11`
 PHAR_NAME="continuousphp-$TAG.phar"
 
 if [ -z ${CONTINUOUSPHP} ];
