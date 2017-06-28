@@ -1,8 +1,2 @@
-[
-  {
-    "name": "continuousphpcli.phar",
-    "sha1": "0eedbfee85b30b3aa3345246c291d1cdd701aab0",
-    "url": "https://github.com/continuousphp/cli/releases/download/v0.1.2/continuousphpcli.phar",
-    "version": "0.1.2"
-  }
-]
+{
+}
