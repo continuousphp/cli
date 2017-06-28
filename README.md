@@ -11,7 +11,7 @@
 
 # ContinuousPHP\Cli
 
-CLI for ContinuousPHP platform. Manage project and build easily from your favorite terminal.
+CLI for the ContinuousPHP platform. Manage projects and build easily from your favorite terminal.
 
 ## Installation
 
@@ -27,9 +27,9 @@ $ composer require continuousphp/cli '~0.0'
 
 1. Fork it :clap:
 2. Create your feature branch: `git checkout -b feat/my-new-feature`
-3. Write your Unit and Functional testing
+3. Write your Unit and Functional tests
 4. Commit your changes: `git commit -am 'Add some feature'`
 5. Push to the branch: `git push origin feat/my-new-feature`
-6. Submit a pull request with the detail of your implementation
+6. Submit a pull request with the details of your implementation
 7. Take a drink during our review and merge :beers:
 
