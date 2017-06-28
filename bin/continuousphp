@@ -1,0 +1,20 @@
+#!/usr/bin/env php
+<?php
+
+$autoloaders = ['vendor', '../..'];
+
+foreach ($autoloaders as $autoloader) {
+    $path = dirname(__DIR__) . DIRECTORY_SEPARATOR .
+        $autoloader . DIRECTORY_SEPARATOR . 'autoload.php';
+
+    if (file_exists($path)) {
+        require_once $path;
+        break;
+    }
+}
+
+$app = new \Continuous\Cli\ApplicationFactory();
+$app
+    ->create()
+    ->run()
+;

@@ -1,0 +1,35 @@
+{
+    "name": "continuousphp/cli",
+    "description": "The command line interface to ContinuousPHP Platform",
+    "type": "library",
+    "license": "Apache-2.0",
+    "authors": [
+        {
+            "name": "Pierre Tomasina",
+            "email": "pierre.tomasina@continuousphp.com"
+        }
+    ],
+    "require": {
+        "continuousphp/sdk": "dev-feat/entities",
+        "symfony/console": "^3.3",
+        "hoa/console": "~3.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Continuous\\Cli\\": "src/"
+        },
+        "files": ["constants.php"]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Continuous\\Cli\\Tests\\": "tests/"
+        }
+    },
+    "bin": ["bin/continuousphp"],
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/Pierozi/guzzle-services.git"
+        }
+    ]
+}

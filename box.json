@@ -1,0 +1,30 @@
+{
+  "files": [
+    "constants.php"
+  ],
+  "directories": [
+    "src"
+  ],
+  "finder": [
+    {
+      "name": "*.php",
+      "exclude": [
+        "phpunit",
+        "phpunit-test-case",
+        "Tester",
+        "Tests",
+        "Test",
+        "tests",
+        "yaml"
+      ],
+      "in": "vendor"
+    }
+  ],
+  "git-version": "git-version",
+  "replacements": {
+    "my-custom-place-holder": "custom-value-dev-master"
+  },
+  "main": "bin/continuousphp",
+  "output": "continuousphp-@git-version@.phar",
+  "stub": true
+}
