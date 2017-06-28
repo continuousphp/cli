@@ -27,10 +27,13 @@ curl -sS -H "Authorization: token ${GITHUB_TOKEN}" -H "Content-Type: application
 
 rm -rf .git
 mkdocs build -d doc_dist
-mkdir cli-site
+
+git config user.email "info@continuousphp.com"
+git config user.name "${CPHP_BUILT_BY}"
+
+git clone "https://${GITHUB_TOKEN}@github.com/continuousphp/cli.git" cli-site
 cd cli-site
-git init
-git pull "https://${GITHUB_TOKEN}@github.com/continuousphp/cli.git" gh-pages
+git checkout gh-pages
 rm -rf doc
 mv ../doc_dist doc
 
@@ -39,8 +42,5 @@ php -r '$x = json_decode(file_get_contents("manifest.json"), true); $x["'$TAG'"]
 git add -A doc
 git add manifest.json
 
-git config user.email "info@continuousphp.com"
-git config user.name "${CPHP_BUILT_BY}"
-
 git commit -m "Update doc to tag $TAG"
-git push "https://${GITHUB_TOKEN}@github.com/continuousphp/cli.git"
+git push origin gh-pages
