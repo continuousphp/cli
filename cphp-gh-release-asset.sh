@@ -28,9 +28,6 @@ curl -sS -H "Authorization: token ${GITHUB_TOKEN}" -H "Content-Type: application
 rm -rf .git
 mkdocs build -d doc_dist
 
-git config user.email "info@continuousphp.com"
-git config user.name "${CPHP_BUILT_BY}"
-
 git clone "https://${GITHUB_TOKEN}@github.com/continuousphp/cli.git" cli-site
 cd cli-site
 git checkout gh-pages
@@ -38,6 +35,9 @@ rm -rf doc
 mv ../doc_dist doc
 
 php -r '$x = json_decode(file_get_contents("manifest.json"), true); $x["'$TAG'"] = ["name"=>"continuousphpcli.phar","sha1"=>sha1_file("../'$PHAR_NAME'"),"url"=>"https://github.com/continuousphp/cli/releases/download/'$TAG'/continuousphpcli.phar","version"=>substr("'$TAG'",1)]; file_put_contents("manifest.json", json_encode($x)); print_r($x);'
+
+git config user.email "info@continuousphp.com"
+git config user.name "${CPHP_BUILT_BY}"
 
 git add -A doc
 git add manifest.json
