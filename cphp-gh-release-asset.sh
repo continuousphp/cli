@@ -43,4 +43,4 @@ git add -A doc
 git add manifest.json
 
 git commit -m "Update doc to tag $TAG"
-git push "https://${GITHUB_TOKEN}@github.com:continuousphp/cli.git" gh-pages
+git push "https://${GITHUB_TOKEN}@github.com/continuousphp/cli.git" gh-pages
