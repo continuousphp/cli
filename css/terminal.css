@@ -24,7 +24,7 @@
 }
 
 .fakeTerminal .fakeMenu {
-  width: 550px;
+  width: 600px;
   box-sizing: border-box;
   height: 25px;
   background-color: #bbb;
@@ -36,7 +36,7 @@
 .fakeTerminal .fakeScreen {
   background-color: #151515;
   box-sizing: border-box;
-  width: 550px;
+  width: 600px;
   height: 250px;
   margin: 0 auto;
   padding: 20px;
