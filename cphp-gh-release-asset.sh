@@ -27,8 +27,10 @@ curl -sS -H "Authorization: token ${GITHUB_TOKEN}" -H "Content-Type: application
 
 rm -rf .git
 mkdocs build -d doc_dist
-git clone git@github.com:continuousphp/cli.git cli-site
+mkdir cli-site
 cd cli-site
+git init
+git pull "https://${GITHUB_TOKEN}@github.com:continuousphp/cli.git"
 git checkout gh-pages
 rm -rf doc
 mv ../doc_dist doc
@@ -42,4 +44,4 @@ git add -A doc
 git add manifest.json
 
 git ci -m "Update doc to tag $TAG"
-git push origin gh-pages
+git push "https://${GITHUB_TOKEN}@github.com:continuousphp/cli.git" gh-pages
