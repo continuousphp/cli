@@ -15,17 +15,17 @@
 
 CLI for ContinuousPHP platform. Manage project and build easily from your favorite terminal.
 
-## Installation
+## Installation as Phar ( Recommended )
 
-With [Composer](https://getcomposer.org/), to include this library into your dependencies, you need to require [`continuousphp/cli`](https://packagist.org/packages/continuousphp/cli):
+Download the latest version of continuousphpcli as a Phar:
 
 ```sh
-$ composer require continuousphp/cli '~0.0'
+$ curl -LSs https://continuousphp.github.io/cli/phar-installer.php | php
 ```
 
-## Usage
-
-sed -i 's/;phar.readonly = On/phar.readonly = Off/' /home/cphp/.phpbrew/php/*/etc/php.ini
+The command will check your PHP settings, warn you of any issues, and the download it to the current directory. 
+From there, you may place it anywhere that will make it easier for you to access (such as `/usr/local/bin`) and chmod it to 755. 
+You can even rename it to just `continuousphpcli` to avoid having to type the .phar extension every time.
 
 ## Contributing
 

@@ -25,3 +25,21 @@ echo "Upload to $upload_url"
 curl -sS -H "Authorization: token ${GITHUB_TOKEN}" -H "Content-Type: application/octet-stream" --upload-file $PHAR_NAME "$upload_url?name=continuousphpcli.phar"
 curl -sS -H "Authorization: token ${GITHUB_TOKEN}" -H "Content-Type: application/octet-stream" --upload-file "$PHAR_NAME.sig" "$upload_url?name=continuousphpcli.sig"
 
+rm -rf .git
+mkdocs build -d doc_dist
+git clone git@github.com:continuousphp/cli.git cli-site
+cd cli-site
+git checkout gh-pages
+rm -rf doc
+mv ../doc_dist doc
+
+TAG="v0.1.2"
+PHAR_NAME="continuousphp-$TAG.phar"
+
+php -r '$x = json_decode(file_get_contents("manifest.json"), true); $x["'$TAG'"] = ["name"=>"continuousphpcli.phar","sha1"=>sha1_file("../'$PHAR_NAME'"),"url"=>"https://github.com/continuousphp/cli/releases/download/'$TAG'/continuousphpcli.phar","version"=>substr("'$TAG'",1)]; file_put_contents("manifest.json", json_encode($x)); print_r($x);'
+
+git add -A doc
+git add manifest.json
+
+git ci -m "Update doc to tag $TAG"
+git push origin gh-pages
