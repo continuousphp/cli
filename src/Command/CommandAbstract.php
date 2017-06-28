@@ -58,14 +58,14 @@ abstract class CommandAbstract extends Command
                 'token',
                 null,
                 InputOption::VALUE_OPTIONAL,
-                'The token of continuousphp user',
+                'The token of the continuousphp user',
                 null
             )
             ->addOption(
                 'profile',
                 null,
                 InputOption::VALUE_OPTIONAL,
-                'The profile of configure credentials. See route configure',
+                'The profile of the configured credentials. See route configure',
                 null
             );
     }

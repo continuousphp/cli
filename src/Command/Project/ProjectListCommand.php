@@ -37,7 +37,7 @@ class ProjectListCommand extends CommandAbstract
         parent::execute($input, $output);
 
         $filterName = $input->getOption('filter-name');
-        $this->showLoader($output, 'Loading project from providers (github, bitbucket, gitlab)...');
+        $this->showLoader($output, 'Loading projects from providers (github, bitbucket, gitlab)...');
 
         /** @var Collection $collection */
         $collection = $this->continuousClient->getProjects();

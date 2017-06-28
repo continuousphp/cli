@@ -40,6 +40,6 @@ class BuildStopCommand extends CommandAbstract
         $result = $this->continuousClient->cancelBuild($params);
         var_dump($result);
 
-        $output->writeln('Built has been cancelled.');
+        $output->writeln('Build has been cancelled.');
     }
 }
