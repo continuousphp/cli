@@ -4,8 +4,8 @@ body {
 }
 .is-dark {
   background-color: #F62459;
-  /*background-image: linear-gradient(rgba(25, 181, 254, 0.6),rgba(246, 36, 89, 0.6)),linear-gradient(rgba(0, 0, 0, 0.6),rgba(0, 0, 0, 0.6)), url('cphp-screenshot.png');*/
   background-image: linear-gradient(rgba(25, 181, 254, 0.6),rgba(119, 155, 20, 0.3)),linear-gradient(rgba(0, 0, 0, 0.6),rgba(0, 0, 0, 0.6)), url('cphp-screenshot.png');
+  background-size: cover;
 }
 .nav {
     padding: 20px 0;
