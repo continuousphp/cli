@@ -13,7 +13,7 @@
 
 # ContinuousPHP\Cli
 
-CLI for ContinuousPHP platform. Manage project and build easily from your favorite terminal.
+CLI for the ContinuousPHP platform. Manage projects and build easily from your favorite terminal.
 
 ## Installation as Phar ( Recommended )
 
@@ -23,17 +23,17 @@ Download the latest version of continuousphpcli as a Phar:
 $ curl -LSs https://continuousphp.github.io/cli/phar-installer.php | php
 ```
 
-The command will check your PHP settings, warn you of any issues, and the download it to the current directory. 
-From there, you may place it anywhere that will make it easier for you to access (such as `/usr/local/bin`) and chmod it to 755. 
+The command will check your PHP settings, warn you of any issues, and then download it to the current directory.
+From there, you may place it anywhere you want to make it easier to access (such as `/usr/local/bin`) and chmod it to 755.
 You can even rename it to just `continuousphpcli` to avoid having to type the .phar extension every time.
 
 ## Contributing
 
 1. Fork it :clap:
 2. Create your feature branch: `git checkout -b feat/my-new-feature`
-3. Write your Unit and Functional testing
+3. Write your Unit and Functional tests
 4. Commit your changes: `git commit -am 'Add some feature'`
 5. Push to the branch: `git push origin feat/my-new-feature`
-6. Submit a pull request with the detail of your implementation
+6. Submit a pull request with the details of your implementation
 7. Take a drink during our review and merge :beers:
 

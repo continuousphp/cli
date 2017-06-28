@@ -64,6 +64,6 @@ class BuildStartCommand extends CommandAbstract
         /** @var Build $build */
         $build = $this->continuousClient->startBuild($params);
 
-        $output->writeln('Build start with ID ' . $build->get('buildId'));
+        $output->writeln('Build started with ID ' . $build->get('buildId'));
     }
 }

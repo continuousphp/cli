@@ -48,7 +48,7 @@ class ConfigureCommand extends CommandAbstract
         if (true === $input->getOption('no-interaction')) {
             if (!$profile && !$token) {
                 $output->writeln(
-                    "<error>ERROR : no-interaction was specified, you must declare profile and token as option</error>"
+                    "<error>ERROR : no-interaction was specified. You must declare profile and token as option</error>"
                 );
             }
 
