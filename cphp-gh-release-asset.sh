@@ -30,8 +30,7 @@ mkdocs build -d doc_dist
 mkdir cli-site
 cd cli-site
 git init
-git pull "https://${GITHUB_TOKEN}@github.com:continuousphp/cli.git"
-git checkout gh-pages
+git pull "https://${GITHUB_TOKEN}@github.com/continuousphp/cli.git" gh-pages
 rm -rf doc
 mv ../doc_dist doc
 
@@ -43,5 +42,5 @@ php -r '$x = json_decode(file_get_contents("manifest.json"), true); $x["'$TAG'"]
 git add -A doc
 git add manifest.json
 
-git ci -m "Update doc to tag $TAG"
+git commit -m "Update doc to tag $TAG"
 git push "https://${GITHUB_TOKEN}@github.com:continuousphp/cli.git" gh-pages
