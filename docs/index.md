@@ -28,6 +28,7 @@ each profile must be configured with the continuousphp user token, you can find 
  on your credentials page at https://app.continuousphp.com/credentials
 
 Configure new profile in interactive mode with this command
+
     $ continuousphpcli configure
      > Profile name [default]: myProfileName
      > User Token: XXXXXXXXXX
