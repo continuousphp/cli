@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
   <link rel="stylesheet" type="text/css" href="css/bulma.css">
   <link rel="stylesheet" type="text/css" href="css/landing.css">
+  <link rel="stylesheet" type="text/css" href="css/terminal.css">
 </head>
 <body>
   <section class="hero is-fullheight is-dark">
@@ -52,9 +53,18 @@
     <div class="hero-body">
       <div class="container has-text-centered">
         <div class="columns is-vcentered">
-          <div class="column is-5">
-            <figure class="image is-4by3" style="background-color:black">
-            </figure>
+          <div class="column is-5 fakeTerminal">
+            <div class=fakeMenu>
+              <div class="fakeButtons fakeClose"></div>
+              <div class="fakeButtons fakeMinimize"></div>
+              <div class="fakeButtons fakeZoom"></div>
+            </div>
+            <div class="fakeScreen">
+              <p class="line1">$ curl -LSs https://continuousphp.github.io/cli/installer.php | php<span class="cursor1">_</span></p>
+              <p class="line2">mv continuousphpcli.phar /usr/local/bin/continuousphpcli<span class="cursor2">_</span></p>
+              <p class="line3">Enjoy :)<span class="cursor3">_</span></p>
+              <p class="line4">><span class="cursor4">_</span></p>
+            </div>
           </div>
           <div class="column is-6 is-offset-1">
             <h1 class="title is-2">
@@ -74,7 +84,6 @@
         <div class="tabs is-centered">
           <ul>
             <li><a href="https://github.com/dansup/bulma-templates">Theme from dansup</a></li>
-            <li><a href="http://unsplash.com">Images via unsplash</a></li>
             <li><a href="http://bulma.io">Made with bulma ❤️</a></li>
           </ul>
         </div>
