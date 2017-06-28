@@ -34,13 +34,13 @@ git pull "https://${GITHUB_TOKEN}@github.com/continuousphp/cli.git" gh-pages
 rm -rf doc
 mv ../doc_dist doc
 
-TAG="v0.1.2"
-PHAR_NAME="continuousphp-$TAG.phar"
-
 php -r '$x = json_decode(file_get_contents("manifest.json"), true); $x["'$TAG'"] = ["name"=>"continuousphpcli.phar","sha1"=>sha1_file("../'$PHAR_NAME'"),"url"=>"https://github.com/continuousphp/cli/releases/download/'$TAG'/continuousphpcli.phar","version"=>substr("'$TAG'",1)]; file_put_contents("manifest.json", json_encode($x)); print_r($x);'
 
 git add -A doc
 git add manifest.json
 
+git config user.email "info@continuousphp.com"
+git config user.name "${CPHP_BUILT_BY}"
+
 git commit -m "Update doc to tag $TAG"
-git push "https://${GITHUB_TOKEN}@github.com/continuousphp/cli.git" gh-pages
+git push "https://${GITHUB_TOKEN}@github.com/continuousphp/cli.git"
