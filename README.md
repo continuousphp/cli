@@ -16,7 +16,7 @@ CLI for the ContinuousPHP platform. Manage projects and build easily from your f
 
 ## Installation as Phar ( Recommended )
 
-Download the latest version of continuousphpcli as a Phar:
+Download the latest version of continuousphp cli as a Phar:
 
 ```sh
 $ curl -LSs https://continuousphp.github.io/cli/phar-installer.php | php
@@ -24,7 +24,7 @@ $ curl -LSs https://continuousphp.github.io/cli/phar-installer.php | php
 
 The command will check your PHP settings, warn you of any issues, and then download it to the current directory.
 From there, you may place it anywhere you want to make it easier to access (such as `/usr/local/bin`) and chmod it to 755.
-You can even rename it to just `continuousphpcli` to avoid having to type the .phar extension every time.
+You can even rename it to just `continuousphp` to avoid having to type the .phar extension every time.
 
 ## Documentation
 
