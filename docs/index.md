@@ -7,15 +7,15 @@ The ContinuousPHP CLI is a command line interface for the ContinuousPHP Platform
 ## Installation
 
 We recommend using the php installer script to install the latest version
-of continuousphpcli PHAR.
+of continuousphp PHAR.
 
     $ curl -LSs https://continuousphp.github.io/cli/phar-installer.php | php
     # Move the phar in your user bin directory
-    $ mv continuousphpcli.phar /usr/local/bin/continuousphpcli
+    $ mv continuousphp.phar /usr/local/bin/continuousphp
 
 The command will check your PHP settings, warn you of any issues, and then download it to the current directory.
 From there, you may place it anywhere you want to make it easier to access (such as `/usr/local/bin`) and chmod it to 755.
-You can even rename it to just `continuousphpcli` to avoid having to type the .phar extension every time.
+You can even rename it to just `continuousphp` to avoid having to type the .phar extension every time.
 
 ## Configuration
 
@@ -29,10 +29,10 @@ on your credentials page at https://app.continuousphp.com/credentials
 
 Configure a new profile in interactive mode with this command:
 
-    $ continuousphpcli configure
+    $ continuousphp configure
      > Profile name [default]: myProfileName
      > User Token: XXXXXXXXXX
      < Profile myUserAccount saved in /home/user/.continuousphp/credentials
 
-If you choose `default` as the profile name, the continuousphpcli will automatically use this credential.
+If you choose `default` as the profile name, the continuousphp command will automatically use this credential.
 Otherwise, you must specify the option `--profile myProfileName` on each command.
