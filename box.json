@@ -14,8 +14,7 @@
         "Tester",
         "Tests",
         "Test",
-        "tests",
-        "yaml"
+        "tests"
       ],
       "in": "vendor"
     }

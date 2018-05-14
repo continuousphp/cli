@@ -5,6 +5,7 @@ namespace Continuous\Cli;
 use Continuous\Cli\Command\Build\BuildListCommand;
 use Continuous\Cli\Command\Build\BuildStartCommand;
 use Continuous\Cli\Command\Build\BuildStopCommand;
+use Continuous\Cli\Command\Build\BuildWaitCommand;
 use Continuous\Cli\Command\Company\CompanyListCommand;
 use Continuous\Cli\Command\ConfigureCommand;
 use Continuous\Cli\Command\Pipeline\PipelineExportCommand;
@@ -38,6 +39,7 @@ final class ApplicationFactory
         $application->add(new BuildStopCommand());
         $application->add(new PipelineExportCommand());
         $application->add(new PackageDownloadCommand());
+        $application->add(new BuildWaitCommand());
 
         return $application;
     }
