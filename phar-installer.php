@@ -28,10 +28,10 @@ namespace
 
     // check version
     check(
-        'You have a supported version of PHP (>= 5.4.0).',
+        'You have a supported version of PHP (>= 7.1.0).',
         'You need PHP 5.4.0 or greater.',
         function () {
-            return version_compare(PHP_VERSION, '5.4.0', '>=');
+            return version_compare(PHP_VERSION, '7.1.0', '>=');
         }
     );
 
