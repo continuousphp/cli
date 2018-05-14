@@ -8,6 +8,7 @@ use Continuous\Cli\Command\Build\BuildStopCommand;
 use Continuous\Cli\Command\Company\CompanyListCommand;
 use Continuous\Cli\Command\ConfigureCommand;
 use Continuous\Cli\Command\Pipeline\PipelineExportCommand;
+use Continuous\Cli\Command\Package\PackageDownloadCommand;
 use Continuous\Cli\Command\Project\ProjectListCommand;
 use Continuous\Cli\Command\Repository\RepositoryListCommand;
 use Symfony\Component\Console\Application;
@@ -36,6 +37,7 @@ final class ApplicationFactory
         $application->add(new BuildStartCommand());
         $application->add(new BuildStopCommand());
         $application->add(new PipelineExportCommand());
+        $application->add(new PackageDownloadCommand());
 
         return $application;
     }
