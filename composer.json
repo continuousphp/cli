@@ -10,7 +10,7 @@
         }
     ],
     "require": {
-        "continuousphp/sdk": "dev-feat/entities",
+        "continuousphp/sdk": "^0.7",
         "symfony/console": "^3.3",
         "hoa/console": "~3.0"
     },
@@ -29,7 +29,7 @@
     "repositories": [
         {
             "type": "vcs",
-            "url": "https://github.com/Pierozi/guzzle-services.git"
+            "url": "https://github.com/continuousphp/guzzle-services.git"
         }
     ]
 }
