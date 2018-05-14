@@ -35,7 +35,7 @@ class BuildListCommand extends CommandAbstract
                 's',
                 InputOption::VALUE_OPTIONAL | InputOption::VALUE_IS_ARRAY,
                 'the build status',
-                Build::STATE
+                Build::STATES
             )
             ->addOption(
                 'noPr',
