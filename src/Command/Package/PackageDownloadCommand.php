@@ -30,7 +30,7 @@ class PackageDownloadCommand extends CommandAbstract
                 'ref',
                 'r',
                 InputOption::VALUE_OPTIONAL,
-                'The git reference'
+                'Pipeline git reference (e.g refs/heads/master)'
             )
             ->addOption(
                 'id',

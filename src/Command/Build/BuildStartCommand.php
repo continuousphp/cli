@@ -29,16 +29,18 @@ class BuildStartCommand extends CommandAbstract
                 InputOption::VALUE_OPTIONAL,
                 'the PR id you want build'
             )
-        ;
-
-        $this
             ->addOption(
                 'attach',
                 'a',
                 InputOption::VALUE_NONE,
                 'attach the log'
             )
-        ;
+            ->addOption(
+                'print-only-build-id',
+                'p',
+                InputOption::VALUE_NONE,
+                'Output only the Build ID without any other message'
+            );
     }
 
     /**
@@ -49,7 +51,9 @@ class BuildStartCommand extends CommandAbstract
     {
         parent::execute($input, $output);
 
-        $this->showLoader($output, 'Starting builds...');
+        if (!$input->getOption('print-only-build-id')) {
+            $this->showLoader($output, 'Starting builds...');
+        }
 
         $params = [
             'provider' => static::mapProviderToSdk($input->getArgument('provider')),
@@ -64,6 +68,10 @@ class BuildStartCommand extends CommandAbstract
         /** @var Build $build */
         $build = $this->continuousClient->startBuild($params);
 
-        $output->writeln('Build started with ID ' . $build->get('buildId'));
+        if ($input->getOption('print-only-build-id')) {
+            echo $build->get('buildId');
+        } else {
+            $output->writeln('Build started with ID ' . $build->get('buildId'));
+        }
     }
 }
