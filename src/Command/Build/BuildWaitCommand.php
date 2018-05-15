@@ -48,9 +48,10 @@ class BuildWaitCommand extends CommandAbstract
         do {
             /** @var Build $build */
             $build = $this->continuousClient->getBuild($params);
-            $this->clearScreen($output);
             $this->showActivitiesTable($build, $table);
         } while('complete' !== $build->get('state') && 0 === sleep(static::WAIT_SECONDS_INTERVAL));
+
+        exit('success' === $build->get('result') ? 0 : 1);
     }
 
     /**
@@ -93,10 +94,5 @@ class BuildWaitCommand extends CommandAbstract
         $table
             ->setRows($rows)
             ->render();
-    }
-
-    private function clearScreen(OutputInterface $output)
-    {
-        $output->write(str_repeat("\x1B[1A\x1B[2K", 1000));
     }
 }
