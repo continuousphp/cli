@@ -10,7 +10,7 @@
         }
     ],
     "require": {
-        "continuousphp/sdk": "^0.7",
+        "continuousphp/sdk": "^0.8",
         "symfony/console": "^3.3",
         "hoa/console": "~3.0"
     },
