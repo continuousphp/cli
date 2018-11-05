@@ -94,9 +94,9 @@ abstract class CommandAbstract extends Command
         ]);
     }
 
-    protected function showLoader($output, $message = '')
+    protected function showLoader($output, $message = '', $max = 1)
     {
-        $this->loader = new ProgressBar($output, 1);
+        $this->loader = new ProgressBar($output, $max);
 
         if ($message) {
             $this->loader->setFormatDefinition('custom', ' %current%/%max% -- %message%');

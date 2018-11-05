@@ -11,6 +11,7 @@ use Continuous\Cli\Command\ConfigureCommand;
 use Continuous\Cli\Command\Pipeline\PipelineExportCommand;
 use Continuous\Cli\Command\Package\PackageDownloadCommand;
 use Continuous\Cli\Command\Project\ProjectListCommand;
+use Continuous\Cli\Command\Project\ProjectResetHooksCommand;
 use Continuous\Cli\Command\Repository\RepositoryListCommand;
 use Symfony\Component\Console\Application;
 
@@ -34,6 +35,7 @@ final class ApplicationFactory
         $application->add(new CompanyListCommand());
         $application->add(new RepositoryListCommand());
         $application->add(new ProjectListCommand());
+        $application->add(new ProjectResetHooksCommand());
         $application->add(new BuildListCommand());
         $application->add(new BuildStartCommand());
         $application->add(new BuildStopCommand());
