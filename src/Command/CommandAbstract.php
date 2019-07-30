@@ -67,6 +67,13 @@ abstract class CommandAbstract extends Command
                 InputOption::VALUE_OPTIONAL,
                 'The profile of the configured credentials. See route configure',
                 null
+            )
+            ->addOption(
+                'apiurl',
+                null,
+                InputOption::VALUE_OPTIONAL,
+                'The API URL (default https://api.continuousphp.com)',
+                null
             );
     }
 
@@ -78,9 +85,9 @@ abstract class CommandAbstract extends Command
     {
         $token = $input->getOption('token');
         $profile = $input->getOption('profile');
+        $apiUrl = $input->getOption('apiurl') ?? null;
 
         if (null === $token && false === ($token = getenv('CPHP_TOKEN'))) {
-
             $profile = empty($profile) ? 'default' : $profile;
             $token = ConfigureCommand::getToken($profile);
 
@@ -91,7 +98,7 @@ abstract class CommandAbstract extends Command
 
         $this->continuousClient = \Continuous\Sdk\Service::factory([
             'token' => $token
-        ]);
+        ], $apiUrl);
     }
 
     protected function showLoader($output, $message = '', $max = 1)
