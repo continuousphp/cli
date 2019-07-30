@@ -10,9 +10,8 @@
         }
     ],
     "require": {
-        "continuousphp/sdk": "^0.8",
-        "symfony/console": "^3.3",
-        "hoa/console": "~3.0"
+        "continuousphp/sdk": "^0.9",
+        "symfony/console": "^3.3"
     },
     "autoload": {
         "psr-4": {
